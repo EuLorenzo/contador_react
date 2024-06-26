@@ -12,11 +12,6 @@ function App() {
   }
 
   const handleDeleteCount = () => {
-    if(count == 0){
-      alert("Contador não pode ser negativo!")
-      return
-    }
-
     setCount(count - 1)
   }
 
