@@ -3,20 +3,18 @@ import * as Styled from "./styled"
 interface buttonProps{
     content : string
     isBlack : boolean
-    changeBackgroundColor : Function
+    changeBackgroundColor : (a : boolean) => void
 }
 
-export default function Button( props : buttonProps){
+export default function Button( {changeBackgroundColor, isBlack, content} : buttonProps){
 
     function handleChangeBackground(){
-        props.changeBackgroundColor(!props.isBlack)
-        console.log(props.isBlack)
-
+        changeBackgroundColor(!isBlack)
     }
 
     return(
-        <Styled.Button onClick={handleChangeBackground} isBlack={props.isBlack}>
-            Turn to {props.content}
+        <Styled.Button onClick={handleChangeBackground} isBlack={isBlack}>
+            Turn to {content}
         </Styled.Button>
     )
 

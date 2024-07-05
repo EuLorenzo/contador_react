@@ -3,21 +3,22 @@ import * as Styled from "./AppStyle"
 import Button from './components/Button'
 
 function App() {
-
   const [count, setCount] = useState(0)
   const [isBlack, setIsBlack] = useState(false)
 
-  const handleNewCount = () => {
+  function handleNewCount(){
     setCount(count + 1)
   }
 
-  const handleDeleteCount = () => {
+  function handleDeleteCount(){
     setCount(count - 1)
   }
 
   function changeBackgroundColor(a : boolean) {
     setIsBlack(a)
   }
+
+  const backgroundColor = isBlack ? "white" : "black"
 
   return (
     <div>
@@ -26,7 +27,7 @@ function App() {
       <Styled.Header>
         <Button 
           changeBackgroundColor={changeBackgroundColor}
-          content={isBlack ? "white" : "black"}
+          content={backgroundColor}
           isBlack={isBlack} />
       </Styled.Header>
 
